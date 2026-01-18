@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://adamanthr.com/sitemap.xml
+
+# Disallow admin and API routes if any
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all other pages
+Allow: /aboutus
+Allow: /services
+Allow: /business
+Allow: /careers
+Allow: /contact

@@ -1,0 +1,38 @@
+.services-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-block {
+  margin-top : 50px;
+  margin-bottom: 45px;
+  padding: 20px;
+  background: #f8f9ff;
+  border-left: 5px solid #006AB0;
+  border-radius: 8px;
+}
+
+.service-block h1 {
+  font-size: 26px;
+  color: #006AB0;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.service-block h3 {
+  margin-top: 15px;
+  color: #006AB0;
+  font-size: 20px;
+}
+
+.service-block ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.service-block li {
+  margin-bottom: 8px;
+  color: #444;
+}

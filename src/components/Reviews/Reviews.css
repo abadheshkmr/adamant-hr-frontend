@@ -1,0 +1,58 @@
+.reviews-container {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.reviews-slide-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-slide {
+  display: grid;
+  gap: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.reviews-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Responsive gaps for smaller screens */
+@media (max-width: 600px) {
+  .reviews-slide {
+    gap: 5px;
+  }
+}

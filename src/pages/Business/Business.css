@@ -1,0 +1,19 @@
+.heading-client {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #333;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.heading-client::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #006AB0; /* Indigo accent */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}

@@ -1,0 +1,123 @@
+.about-wrapper {
+max-width: 1300px;
+margin: 0 auto;
+padding: 40px 20px;
+font-family: "Poppins", sans-serif;
+line-height: 1.6;
+}
+
+
+/* Header */
+
+.about-header {
+    margin-top: 50px;
+}
+
+.about-header h1 {
+font-size: 36px;
+font-weight: 700;
+text-align: center;
+margin-bottom: 20px;
+color: #006AB0;
+}
+
+
+.about-header p {
+font-size: 16px;
+color: #444;
+}
+
+
+/* Section */
+.about-section {
+margin-top: 40px;
+padding: 20px;
+background: #f4f7ff;
+border-left: 5px solid #006AB0;
+border-radius: 8px;
+}
+
+
+.about-section h2 {
+margin-bottom: 10px;
+font-size: 24px;
+color: #006AB0;
+}
+
+
+.about-section p {
+color: #555;
+}
+
+
+/* Core Values */
+.about-values {
+margin-top: 40px;
+}
+
+
+.about-values h2 {
+font-size: 26px;
+color: #006AB0;
+margin-bottom: 10px;
+}
+
+
+.about-values ul {
+list-style: none;
+padding: 0;
+}
+
+
+.about-values li {
+background: #e8eaf6;
+margin: 10px 0;
+padding: 12px 16px;
+border-radius: 6px;
+border-left: 5px solid #006AB0;
+color: #333;
+font-size: 15px;
+}
+
+
+/* Leadership */
+.leadership-quote {
+margin-top: 10px;
+font-style: italic;
+font-weight: 600;
+color: #006AB0;
+text-align: center;
+}
+
+
+/* What We Deliver */
+.about-deliver {
+margin-top: 40px;
+background: #f3f5ff;
+padding: 20px;
+border-radius: 8px;
+border-left: 5px solid #006AB0;
+}
+
+
+.about-deliver h2 {
+font-size: 26px;
+color: #006AB0;
+margin-bottom: 12px;
+}
+
+
+.about-deliver ul {
+list-style: none;
+padding: 0;
+}
+
+
+.about-deliver li {
+background: #e8eaf6;
+margin: 8px 0;
+padding: 10px 14px;
+border-radius: 6px;
+font-size: 15px;
+font-weight: 500;
+}

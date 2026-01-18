@@ -1,0 +1,107 @@
+/* Container */
+.wf-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #006AB0 0%, #273b7c 100%);
+  color: #ffffff;
+  overflow: hidden;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+/* Content */
+.wf-content {
+  max-width: 700px;
+  z-index: 2;
+}
+
+.wf-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.wf-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: rgb(206, 205, 205);
+}
+
+.wf-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+  color: #e1e0e0;
+}
+
+.wf-button {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wf-button:hover {
+  background-color: #e2e8f0;
+}
+
+/* Decorative pattern (right side) */
+.wf-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.25) 1px, transparent 1px);
+  background-size: 12px 12px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .wf-title {
+    font-size: 2.2rem;
+  }
+  .wf-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wf-hero {
+    padding: 3rem 1rem;
+  }
+  .wf-pattern {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wf-title {
+    font-size: 1.9rem;
+  }
+  .wf-subtitle {
+    font-size: 1rem;
+  }
+  .wf-button {
+    width: 100%;
+    text-align: center;
+  }
+}

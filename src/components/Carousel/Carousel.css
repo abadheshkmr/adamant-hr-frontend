@@ -1,0 +1,153 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out, transform 10s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1.1); /* Zoom-in effect */
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 600px;
+}
+
+.carousel-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  color: rgb(206, 205, 205);
+}
+
+.carousel-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e1e0e0;
+}
+
+.carousel-button {
+  padding: 12px 24px;
+  border: 2px solid #f5426f;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: #f5426f;
+}
+.carousel-controls {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;  /* always on top */
+}
+
+.carousel-controls button {
+  background: rgba(0, 0, 0, 0.5); /* darker background for visibility */
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.carousel-controls button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* always on top */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FE506C; /* default semi-transparent white */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #ffffff;   /* pure white */
+  width: 16px;           /* bigger than normal */
+  height: 16px;
+}
+
+
+
+.contacta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #ff4f7a;   /* pink border */
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 15px;
+}
+
+.contacta-btn .arrowa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ff4f7a;   /* pink circle */
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.contacta-btn:hover {
+  background: #ff4f7a;   /* pink background */
+  color: #1a1a6b;        /* dark blue text */
+}
+
+.contacta-btn:hover .arrowa {
+  background: white;     /* white circle */
+  color: #ff4f7a;        /* pink arrow */
+}
+
+
+a{
+    text-decoration: none;
+}

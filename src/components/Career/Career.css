@@ -1,0 +1,109 @@
+/* Career.css */
+
+.career-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 100px;
+}
+
+.career-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 28px;
+}
+
+.career-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.career-form form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.career-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.career-form input[type="text"],
+.career-form input[type="email"],
+.career-form input[type="tel"],
+.career-form input[type="file"],
+.career-form input[type="number"],
+.career-form select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.career-form input[type="text"]:focus,
+.career-form input[type="email"]:focus,
+.career-form input[type="tel"]:focus,
+.career-form input[type="file"]:focus,
+.career-form select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+  outline: none;
+}
+
+.career-form button {
+  padding: 12px 20px;
+  background-color: #006AB0;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.career-form button:hover {
+  background-color: #5750d4;
+  transform: translateY(-2px);
+}
+
+.career-form p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .career-form {
+    padding: 25px 15px;
+    margin: 20px;
+    margin-top: 90px;
+  }
+
+  .career-form h2 {
+    font-size: 24px;
+  }
+
+  .career-form input[type="text"],
+  .career-form input[type="email"],
+  .career-form input[type="tel"],
+  .career-form input[type="file"] {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .career-form button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
