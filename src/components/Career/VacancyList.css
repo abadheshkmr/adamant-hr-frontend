@@ -6,85 +6,562 @@
   margin-top: 100px;
 }
 
-.vacancy-list h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
+/* Elegant Page Header */
+.vacancy-page-header {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.vacancy-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.header-content {
+  margin-bottom: 20px;
 }
 
-.vacancy-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+.header-title-section {
   display: flex;
-  flex-direction: column;
-  /* justify-content: start; */
-  /* align-items: center; */
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
-.vacancy-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.page-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.vacancy-card h3 {
+.count-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Header Controls - Sort and View Toggle */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.control-select {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-select:hover {
+  border-color: #9ca3af;
+}
+
+.control-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.view-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.view-btn.active {
+  background: white;
+  color: #111827;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.view-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Filter Section */
+.filter-section {
+  background: #f9fafb;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  border: 1px solid #e5e7eb;
+}
+
+.filter-title {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.filter-section > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+}
+
+.filter-section input,
+.filter-section select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.clear-filters-btn {
+  padding: 8px 16px;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.clear-filters-btn:hover {
+  background: #4b5563;
+}
+
+/* Grid Layout for Cards */
+.vacancy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 24px;
+}
+
+.vacancy-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.vacancy-grid.list-view .vacancy-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+}
+
+.vacancy-grid.list-view .vacancy-footer {
+  grid-column: 2;
   margin-top: 0;
-  color: #007bff;
-  flex: 1;
-  min-width: 200px;
+  border-top: none;
+  border-left: 1px solid #f0f0f0;
+  padding-left: 24px;
 }
 
-.vacancy-card p {
-  margin: 10px 0;
-  line-height: 1.5;
+.vacancy-grid.list-view .apply-btn {
+  width: auto;
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .vacancy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .vacancy-grid.list-view .vacancy-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .vacancy-grid.list-view .vacancy-footer {
+    grid-column: 1;
+    border-left: none;
+    border-top: 1px solid #f0f0f0;
+    padding-left: 0;
+    padding-top: 16px;
+  }
+  
+  .vacancy-grid.list-view .apply-btn {
+    width: 100%;
+  }
+  
+  .header-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sort-control {
+    width: 100%;
+  }
+  
+  .control-select {
+    width: 100%;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+/* Modern Compact Card Design */
+.vacancy-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.vacancy-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+}
+
+/* Header Section */
+.vacancy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.vacancy-title-section {
   flex: 1;
-  min-width: 200px;
+}
+
+.vacancy-title {
+  margin: 0 0 8px 0;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.vacancy-industry {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.vacancy-job-id {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 12px;
+  letter-spacing: 0.01em;
+}
+
+/* Quick Info Badges - Compact Horizontal Layout */
+.vacancy-quick-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f9fafb;
+  color: #4b5563;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 13px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.info-badge.location {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.info-badge .icon {
+  font-size: 14px;
+}
+
+.remote-tag {
+  background: #10b981;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* Salary Section - Prominent */
+.vacancy-salary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-radius: 8px;
+  border-left: 3px solid #10b981;
+}
+
+.salary-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.salary-amount {
+  color: #059669;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.negotiable-tag {
+  background: #10b981;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Skills Section - Compact Tags */
+.vacancy-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.skill-tag {
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.skill-more {
+  color: #9ca3af;
+  font-size: 12px;
+  font-style: italic;
+  align-self: center;
+}
+
+/* Description - Compact */
+.vacancy-description {
+  margin: 8px 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer - Apply Button */
+.vacancy-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
 }
 
 .apply-btn {
-  background-color: #006AB0;
+  background: #111827;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-  width: 200px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  width: 100%;
+  letter-spacing: 0.01em;
 }
 
 .apply-btn:hover {
-  background-color: #0056b3;
+  background: #1f2937;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.apply-btn:active {
+  transform: translateY(0);
 }
 
 .vacancy-loading,
 .vacancy-error {
   text-align: center;
-  padding: 40px;
-  font-size: 18px;
+  padding: 60px 20px;
+  font-size: 16px;
+  color: #6b7280;
 }
 
 .vacancy-error {
-  color: #dc3545;
+  color: #dc2626;
 }
 
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .vacancy-card {
-    flex-direction: column;
-    align-items: flex-start;
+  .vacancy-list {
+    padding: 16px;
+    margin-top: 80px;
   }
 
-  .apply-btn {
-    width: 100%;
+  .vacancy-card {
+    padding: 20px;
+  }
+
+  .vacancy-title {
+    font-size: 18px;
+  }
+
+  .vacancy-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vacancy-job-id {
+    margin-left: 0;
+  }
+  
+  .filter-section {
+    padding: 20px;
+  }
+  
+  .filter-section > div {
+    grid-template-columns: 1fr;
   }
 }
