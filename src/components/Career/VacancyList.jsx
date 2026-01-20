@@ -136,6 +136,9 @@ const VacancyList = ({ url }) => {
             {vacancy.industry && (
               <span className="vacancy-industry">{vacancy.industry.name}</span>
             )}
+            {vacancy.client && (
+              <span className="vacancy-client-badge">🏢 {vacancy.client.name}</span>
+            )}
           </div>
           <span className="vacancy-job-id">#{vacancy.jobId}</span>
         </div>
