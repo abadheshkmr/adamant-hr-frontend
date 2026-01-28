@@ -1,0 +1,94 @@
+/* Minimal Footer for Career Pages */
+.minimal-footer {
+  background: #0a0d31;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
+}
+
+.minimal-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.minimal-footer-left p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #b0b3c2;
+}
+
+.minimal-footer-center {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.minimal-footer-center a {
+  color: #b0b3c2;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.minimal-footer-center a:hover {
+  color: #fff;
+}
+
+.separator {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.minimal-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.minimal-footer-right a,
+.social-btn {
+  color: #b0b3c2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.125rem;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minimal-footer-right a:hover,
+.social-btn:hover {
+  color: #006AB0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .minimal-footer {
+    padding: 1rem 1.5rem;
+  }
+  
+  .minimal-footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .minimal-footer-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .minimal-footer-right {
+    order: 2;
+  }
+}
