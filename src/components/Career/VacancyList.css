@@ -1,87 +1,169 @@
+/* ============================================
+   MINIMALISTIC CAREER PAGE DESIGN
+   Matching Services/About Us design system
+   ============================================ */
+
 .vacancy-list {
-  margin-top: 30px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 100px;
-}
-
-/* Elegant Page Header */
-.vacancy-page-header {
-  margin-bottom: 40px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.header-content {
-  margin-bottom: 20px;
-}
-
-.header-title-section {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-
-.page-title {
   margin: 0;
-  font-size: 36px;
+  padding: 0;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HERO SECTION - Matching Services Page
+   ============================================ */
+.careers-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #006AB0 0%, #273b7c 100%);
+  color: #ffffff;
+  overflow: hidden;
+  min-height: 50vh;
+  box-sizing: border-box;
+}
+
+.careers-hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.careers-hero-title {
+  font-size: 3rem;
   font-weight: 700;
-  color: #111827;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
-.count-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  background: #f3f4f6;
-  color: #374151;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.page-subtitle {
-  margin: 0;
-  font-size: 16px;
-  color: #6b7280;
+.careers-hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 50rem;
+  margin: 0 0 2rem 0;
+  color: #e1e0e0;
   font-weight: 400;
-  letter-spacing: 0.01em;
 }
 
-/* Header Controls - Sort and View Toggle */
-.header-controls {
+.careers-stats {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #e1e0e0;
+  font-weight: 500;
+}
+
+.careers-hero-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+.careers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ============================================
+   CONTROLS BAR - Clean & Minimal
+   ============================================ */
+.careers-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controls-left {
   display: flex;
   align-items: center;
-  gap: 16px;
-  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.promotion-toggle {
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.promotion-toggle:hover {
+  background: #e5e7eb;
+  border-color: #006AB0;
+  color: #006AB0;
+}
+
+.promotion-toggle.active {
+  background: #006AB0;
+  color: white;
+  border-color: #006AB0;
 }
 
 .sort-control {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
-.control-label {
-  font-size: 14px;
+.sort-control label {
+  font-size: 0.875rem;
   color: #6b7280;
   font-weight: 500;
-  white-space: nowrap;
 }
 
 .control-select {
-  padding: 6px 12px;
+  padding: 0.5rem 0.75rem;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   background: white;
   color: #374151;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -93,8 +175,8 @@
 
 .control-select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #006AB0;
+  box-shadow: 0 0 0 3px rgba(0, 106, 176, 0.1);
 }
 
 .view-toggle {
@@ -110,8 +192,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border: none;
   background: transparent;
   color: #6b7280;
@@ -128,164 +210,138 @@
 
 .view-btn.active {
   background: white;
-  color: #111827;
+  color: #006AB0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.view-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Filter Section */
-.filter-section {
+/* ============================================
+   FILTER SECTION - Minimalistic Design
+   ============================================ */
+.careers-filters {
   background: #f9fafb;
-  padding: 24px;
+  padding: 1.5rem;
   border-radius: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   border: 1px solid #e5e7eb;
 }
 
-.filter-title {
-  margin: 0 0 20px 0;
-  font-size: 18px;
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.filters-title {
+  margin: 0;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #111827;
-  letter-spacing: -0.01em;
 }
 
-.filter-section > div {
+.clear-filters-link {
+  background: none;
+  border: none;
+  color: #006AB0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.clear-filters-link:hover {
+  color: #005fc1;
+}
+
+.filters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 1rem;
 }
 
-.filter-section label {
-  display: block;
-  margin-bottom: 6px;
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
   font-weight: 500;
-  font-size: 14px;
   color: #374151;
 }
 
-.filter-section input,
-.filter-section select {
+.filter-input,
+.filter-select {
   width: 100%;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 0.625rem 0.75rem;
   border: 1px solid #d1d5db;
-  font-size: 14px;
+  border-radius: 6px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
+  background: white;
+  color: #111827;
   box-sizing: border-box;
 }
 
-.filter-section input:focus,
-.filter-section select:focus {
+.filter-input:focus,
+.filter-select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  border-color: #006AB0;
+  box-shadow: 0 0 0 3px rgba(0, 106, 176, 0.1);
 }
 
-.clear-filters-btn {
-  padding: 8px 16px;
-  background: #6b7280;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.filter-checkbox {
+  display: flex;
+  align-items: flex-end;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
-  margin-top: 8px;
+  color: #374151;
 }
 
-.clear-filters-btn:hover {
-  background: #4b5563;
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #006AB0;
 }
 
-/* Grid Layout for Cards */
+/* ============================================
+   JOB CARDS - Elegant & Modern
+   ============================================ */
 .vacancy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .vacancy-grid.list-view {
   grid-template-columns: 1fr;
 }
 
-.vacancy-grid.list-view .vacancy-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: start;
-}
-
-.vacancy-grid.list-view .vacancy-footer {
-  grid-column: 2;
-  margin-top: 0;
-  border-top: none;
-  border-left: 1px solid #f0f0f0;
-  padding-left: 24px;
-}
-
-.vacancy-grid.list-view .apply-btn {
-  width: auto;
-  min-width: 140px;
-}
-
-@media (max-width: 768px) {
-  .vacancy-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .vacancy-grid.list-view .vacancy-card {
-    grid-template-columns: 1fr;
-  }
-  
-  .vacancy-grid.list-view .vacancy-footer {
-    grid-column: 1;
-    border-left: none;
-    border-top: 1px solid #f0f0f0;
-    padding-left: 0;
-    padding-top: 16px;
-  }
-  
-  .vacancy-grid.list-view .apply-btn {
-    width: 100%;
-  }
-  
-  .header-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .sort-control {
-    width: 100%;
-  }
-  
-  .control-select {
-    width: 100%;
-  }
-  
-  .page-title {
-    font-size: 28px;
-  }
-}
-
-/* Modern Compact Card Design */
 .vacancy-card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 24px;
+  padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
   position: relative;
+  height: auto;
 }
 
 .vacancy-card:hover {
@@ -294,161 +350,156 @@
   border-color: #d1d5db;
 }
 
-/* Header Section */
+/* Icon/Logo */
+.vacancy-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: #111827;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Main Content Area */
+.vacancy-card-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+/* 
 .vacancy-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 4px;
+  gap: 1rem;
+  margin-bottom: 0;
+} */
+.vacancy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0;
+  margin-bottom: 0 !important;
+  padding: 0;
+  padding-bottom: 0 !important;
 }
 
 .vacancy-title-section {
   flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .vacancy-title {
-  margin: 0 0 8px 0;
+  margin: 0;
+  padding: 0;
   color: #111827;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
-.vacancy-client-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  background: #e0f2fe;
-  color: #0369a1;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-left: 8px;
-}
-
-.vacancy-industry {
-  display: inline-block;
-  background: #f3f4f6;
-  color: #6b7280;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.vacancy-job-id {
-  color: #9ca3af;
-  font-size: 12px;
-  font-weight: 500;
-  white-space: nowrap;
-  margin-left: 12px;
-  letter-spacing: 0.01em;
-}
-
-/* Quick Info Badges - Compact Horizontal Layout */
-.vacancy-quick-info {
+.vacancy-meta {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 8px;
+  margin: 0;
+  padding: 0;
+  margin-top: 0.125rem;
 }
 
-.info-badge {
+.vacancy-department {
+  font-weight: 500;
+  color: #374151;
+}
+
+.meta-separator {
+  color: #9ca3af;
+}
+
+.vacancy-location-text {
+  color: #6b7280;
+}
+
+/* Application Count Badge */
+.vacancy-application-count {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  background: #f9fafb;
-  color: #4b5563;
-  padding: 4px 10px;
-  border-radius: 16px;
-  font-size: 13px;
-  white-space: nowrap;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+  font-size: 0.8125rem;
   font-weight: 500;
+  color: #0369a1;
+  margin-top: 0.25rem;
 }
 
-.info-badge.location {
+.count-icon-small {
+  font-size: 0.875rem;
+}
+
+.count-text-small {
+  color: #0369a1;
+}
+
+/* Tags/Badges - Color Coded */
+.vacancy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.tag-fulltime {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.tag-remote {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.tag-experience {
   background: #fef3c7;
   color: #92400e;
 }
 
-.info-badge .icon {
-  font-size: 14px;
+.tag-industry {
+  background: #e0e7ff;
+  color: #3730a3;
 }
 
-.remote-tag {
-  background: #10b981;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-left: 6px;
-}
-
-/* Salary Section - Prominent */
-.vacancy-salary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
-  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
-  border-radius: 8px;
-  border-left: 3px solid #10b981;
-}
-
-.salary-label {
-  font-size: 13px;
-  color: #6b7280;
-  font-weight: 500;
-}
-
-.salary-amount {
-  color: #059669;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-}
-
-.negotiable-tag {
-  background: #10b981;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-left: auto;
-}
-
-/* Skills Section - Compact Tags */
-.vacancy-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-
-.skill-tag {
-  background: #f3f4f6;
-  color: #4b5563;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.skill-more {
-  color: #9ca3af;
-  font-size: 12px;
-  font-style: italic;
-  align-self: center;
-}
-
-/* Description - Compact */
+/* Description */
 .vacancy-description {
-  margin: 8px 0;
-  color: #6b7280;
-  font-size: 14px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9375rem;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -457,42 +508,283 @@
   text-overflow: ellipsis;
 }
 
-/* Footer - Apply Button */
-.vacancy-footer {
+/* Salary - New Style */
+.vacancy-salary-new {
+  margin-top: 0.25rem;
+}
+
+.salary-text {
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Actions Area */
+.vacancy-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding-top: 0;
+}
+
+.view-details-btn {
+  background: none;
+  border: none;
+  color: #006AB0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.view-details-btn:hover {
+  color: #005fc1;
+  text-decoration: underline;
+}
+
+.view-details-btn::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.view-details-btn:hover::after {
+  transform: translateX(4px);
+}
+
+.vacancy-quick-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #f9fafb;
+  color: #4b5563;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.info-badge.location {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.remote-tag {
+  background: #10b981;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.vacancy-salary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-radius: 8px;
+  border-left: 3px solid #10b981;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.vacancy-grid.list-view .vacancy-salary {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.vacancy-grid.list-view .vacancy-salary .salary-label,
+.vacancy-grid.list-view .vacancy-salary .salary-amount {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vacancy-grid.list-view .vacancy-salary .negotiable-tag {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.vacancy-grid.list-view .vacancy-salary {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.salary-label {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.salary-amount {
+  color: #059669;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.negotiable-tag {
+  background: #10b981;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.vacancy-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.skill-tag {
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.skill-more {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-style: italic;
+  align-self: center;
+}
+
+.vacancy-description {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Actions Area - Apply Button */
+.vacancy-card-actions {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 1rem;
   border-top: 1px solid #f3f4f6;
 }
 
 .apply-btn {
-  background: #111827;
+  background: #006AB0;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   transition: all 0.2s ease;
   width: 100%;
-  letter-spacing: 0.01em;
 }
 
 .apply-btn:hover {
-  background: #1f2937;
+  background: #005fc1;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 106, 176, 0.3);
 }
 
-.apply-btn:active {
-  transform: translateY(0);
+/* ============================================
+   LIST VIEW STYLES
+   ============================================ */
+.vacancy-grid.list-view .vacancy-card {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1.5rem !important;
+  align-items: flex-start !important;
+  padding: 1.5rem !important;
+  height: auto !important;
 }
 
+.vacancy-grid.list-view .vacancy-card-main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+.vacancy-grid.list-view .vacancy-card-actions {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+}
+
+.vacancy-grid.list-view .view-details-btn {
+  white-space: nowrap !important;
+}
+
+/* Grid View - Cards stack vertically */
+.vacancy-grid:not(.list-view) .vacancy-card {
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+.vacancy-grid:not(.list-view) .vacancy-card-actions {
+  margin-top: auto !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid #f3f4f6 !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+}
+
+.vacancy-grid:not(.list-view) .view-details-btn {
+  width: 100% !important;
+  justify-content: center !important;
+  padding: 0.75rem 1.5rem !important;
+  background: #006AB0 !important;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+.vacancy-grid:not(.list-view) .view-details-btn:hover {
+  background: #005fc1 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.vacancy-grid:not(.list-view) .view-details-btn::after {
+  content: '' !important;
+}
+
+/* ============================================
+   LOADING & ERROR STATES
+   ============================================ */
 .vacancy-loading,
-.vacancy-error {
+.vacancy-error,
+.no-results {
   text-align: center;
-  padding: 60px 20px;
-  font-size: 16px;
+  padding: 4rem 2rem;
+  font-size: 1rem;
   color: #6b7280;
 }
 
@@ -500,37 +792,35 @@
   color: #dc2626;
 }
 
-.no-results {
-  text-align: center;
-  padding: 60px 20px;
-  color: #6b7280;
-  font-size: 16px;
-}
-
-/* Pagination */
+/* ============================================
+   PAGINATION
+   ============================================ */
 .pagination {
-  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
 }
 
 .pagination button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: 1px solid #d1d5db;
   background: white;
   color: #374151;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .pagination button:hover:not(:disabled) {
   background: #f9fafb;
-  border-color: #9ca3af;
+  border-color: #006AB0;
+  color: #006AB0;
 }
 
 .pagination button:disabled {
@@ -540,39 +830,101 @@
 
 .pagination span {
   color: #6b7280;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+  .careers-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .careers-hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .vacancy-list {
-    padding: 16px;
-    margin-top: 80px;
+  .careers-hero {
+    padding: 3rem 1.5rem;
+    min-height: 40vh;
   }
-
-  .vacancy-card {
-    padding: 20px;
+  
+  .careers-hero-title {
+    font-size: 2rem;
   }
-
-  .vacancy-title {
-    font-size: 18px;
+  
+  .careers-hero-subtitle {
+    font-size: 1rem;
   }
-
-  .vacancy-header {
+  
+  .careers-container {
+    padding: 2rem 1rem;
+  }
+  
+  .careers-controls-bar {
     flex-direction: column;
-    gap: 8px;
-  }
-
-  .vacancy-job-id {
-    margin-left: 0;
+    align-items: stretch;
   }
   
-  .filter-section {
-    padding: 20px;
+  .controls-left,
+  .controls-right {
+    width: 100%;
+    justify-content: space-between;
   }
   
-  .filter-section > div {
+  .vacancy-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .vacancy-grid.list-view .vacancy-card {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .vacancy-grid.list-view .vacancy-card-actions {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-top: 1rem !important;
+    margin-top: 1rem !important;
+    border-left: none !important;
+    border-top: 1px solid #e5e7eb !important;
+    justify-content: flex-start !important;
+  }
+  
+  .vacancy-grid.list-view .view-details-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.75rem 1.5rem !important;
+    background: #006AB0 !important;
+    color: white !important;
+    border-radius: 8px !important;
+  }
+  
+  .vacancy-grid.list-view .view-details-btn:hover {
+    background: #005fc1 !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  .vacancy-grid.list-view .view-details-btn::after {
+    content: '' !important;
+  }
+  
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
   }
 }

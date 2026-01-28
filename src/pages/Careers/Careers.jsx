@@ -1,5 +1,4 @@
 import React from 'react'
-import ContactSection from '../../components/ContactSection/ContactSection'
 import VacancyList from '../../components/Career/VacancyList'
 import SEO from '../../components/SEO/SEO';
 import { getBreadcrumbStructuredData } from '../../components/SEO/StructuredData';
@@ -22,8 +21,6 @@ const Careers = ({url}) => {
         structuredData={structuredData}
       />
         <VacancyList url={url} />
-        {/* <Career url={url} /> */}
-        <ContactSection />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import './Career.css';
 const Career = ({url, jobId}) => {
   const [vacancy, setVacancy] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [applicationCount, setApplicationCount] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -14,6 +15,8 @@ const Career = ({url, jobId}) => {
     jobId: jobId || "",
     city: "",
     state: "",
+    pinCode: "",
+    linkedinUrl: "",
     tenthPercentage: "",
     twelfthPercentage: "",
     degree: "",
@@ -45,6 +48,25 @@ const Career = ({url, jobId}) => {
     fetchVacancy();
   }, [jobId, url]);
 
+  // Fetch application count
+  useEffect(() => {
+    const fetchApplicationCount = async () => {
+      if (!jobId) return;
+      try {
+        const response = await axios.get(`${url}/api/cv/count/${jobId}`);
+        if (response.data.success && response.data.count !== null) {
+          setApplicationCount(response.data.count);
+        } else {
+          setApplicationCount(null);
+        }
+      } catch (error) {
+        console.error('Error fetching application count:', error);
+        setApplicationCount(null);
+      }
+    };
+    fetchApplicationCount();
+  }, [jobId, url]);
+
   // handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,6 +96,8 @@ const Career = ({url, jobId}) => {
     data.append("jobId", jobIdToSubmit);
     data.append("city", formData.city);
     data.append("state", formData.state);
+    data.append("pinCode", formData.pinCode);
+    data.append("linkedinUrl", formData.linkedinUrl);
     data.append("tenthPercentage", formData.tenthPercentage);
     data.append("twelfthPercentage", formData.twelfthPercentage);
     data.append("degree", formData.degree);
@@ -99,6 +123,8 @@ const Career = ({url, jobId}) => {
           jobId: jobId || "",
           city: "",
           state: "",
+          pinCode: "",
+          linkedinUrl: "",
           tenthPercentage: "",
           twelfthPercentage: "",
           degree: "",
@@ -108,6 +134,18 @@ const Career = ({url, jobId}) => {
         // Reset file input
         const fileInput = document.getElementById('resume');
         if (fileInput) fileInput.value = '';
+        
+        // Refresh application count after successful submission
+        try {
+          const countResponse = await axios.get(`${url}/api/cv/count/${jobIdToSubmit}`);
+          if (countResponse.data.success && countResponse.data.count !== null) {
+            setApplicationCount(countResponse.data.count);
+          } else {
+            setApplicationCount(null);
+          }
+        } catch (error) {
+          console.error('Error refreshing application count:', error);
+        }
       } else {
         // Handle case where success is false but no error was thrown
         const errorMessage = result.data?.message || "Failed to submit application";
@@ -157,6 +195,16 @@ const Career = ({url, jobId}) => {
             </div>
             <span className="vacancy-job-id">Job ID: #{vacancy.jobId}</span>
           </div>
+
+          {/* Application Count */}
+          {applicationCount !== null && applicationCount > 0 && (
+            <div className="application-count-badge">
+              <span className="count-icon">👥</span>
+              <span className="count-text">
+                {applicationCount} {applicationCount === 1 ? 'person' : 'people'} clicked apply
+              </span>
+            </div>
+          )}
 
           <div className="vacancy-meta">
             {vacancy.location && (vacancy.location.city || vacancy.location.state) && (
@@ -372,20 +420,46 @@ const Career = ({url, jobId}) => {
                   <option value="Lakshadweep">Lakshadweep</option>
                 </select>
               </div>
+
+              <div className="form-group">
+                <label htmlFor="pinCode">Pin Code *</label>
+                <input
+                  type="text"
+                  id="pinCode"
+                  name="pinCode"
+                  required
+                  value={formData.pinCode}
+                  onChange={handleChange}
+                  placeholder="e.g., 201301"
+                  pattern="[0-9]{6}"
+                  maxLength="6"
+                />
+              </div>
+
+              <div className="form-group full-width">
+                <label htmlFor="linkedinUrl">LinkedIn Profile URL</label>
+                <input
+                  type="url"
+                  id="linkedinUrl"
+                  name="linkedinUrl"
+                  value={formData.linkedinUrl}
+                  onChange={handleChange}
+                  placeholder="https://www.linkedin.com/in/your-profile"
+                />
+              </div>
             </div>
           </div>
 
           {/* Education Details */}
           <div className="form-section">
-            <h3 className="section-title">Education Details</h3>
+            <h3 className="section-title">Education Details (Optional)</h3>
             <div className="form-grid">
               <div className="form-group">
-                <label htmlFor="tenthPercentage">10th Percentage *</label>
+                <label htmlFor="tenthPercentage">10th Percentage</label>
                 <input
                   type="number"
                   id="tenthPercentage"
                   name="tenthPercentage"
-                  required
                   min="0"
                   max="100"
                   step="0.01"
@@ -396,12 +470,11 @@ const Career = ({url, jobId}) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="twelfthPercentage">12th/Diploma Percentage *</label>
+                <label htmlFor="twelfthPercentage">12th/Diploma Percentage</label>
                 <input
                   type="number"
                   id="twelfthPercentage"
                   name="twelfthPercentage"
-                  required
                   min="0"
                   max="100"
                   step="0.01"
@@ -412,15 +485,14 @@ const Career = ({url, jobId}) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="degree">Degree *</label>
+                <label htmlFor="degree">Degree</label>
                 <select
                   id="degree"
                   name="degree"
-                  required
                   value={formData.degree}
                   onChange={handleChange}
                 >
-                  <option value="" disabled>Select your degree</option>
+                  <option value="">Select your degree (optional)</option>
                   <option value="B.Tech CSE">B.Tech CSE</option>
                   <option value="B.Tech IT">B.Tech IT</option>
                   <option value="B.Tech Other Branches">B.Tech Other Branches</option>
@@ -429,12 +501,11 @@ const Career = ({url, jobId}) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="degreeCgpa">Degree CGPA *</label>
+                <label htmlFor="degreeCgpa">Degree CGPA</label>
                 <input
                   type="number"
                   id="degreeCgpa"
                   name="degreeCgpa"
-                  required
                   min="0"
                   max="10"
                   step="0.01"
